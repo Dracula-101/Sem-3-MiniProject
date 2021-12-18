@@ -1,0 +1,9 @@
+lion, An animal
+strawberry, A fruit
+giraffe, An animal
+apple, A fruit
+chair, A furniture
+butterfly, An insect
+crocodile, An animal
+snake, A reptile
+guitar, A Musical instrument
