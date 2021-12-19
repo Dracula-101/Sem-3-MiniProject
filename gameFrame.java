@@ -70,7 +70,7 @@ public class gameFrame extends javax.swing.JFrame {
                 title.setText("Game Library");
 
                 jLabel8.setIcon(new javax.swing.ImageIcon(
-                                "C:\\Users\\Hp\\OneDrive\\Desktop\\Data Structures\\MiniProject\\img\\Title Logo.png")); // NOI18N
+                                "img\\Title Logo.png")); // NOI18N
 
                 javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
                 jPanel2.setLayout(jPanel2Layout);
@@ -125,16 +125,16 @@ public class gameFrame extends javax.swing.JFrame {
                                                                                 Short.MAX_VALUE)));
 
                 jLabel2.setIcon(new javax.swing.ImageIcon(
-                                "C:\\Users\\Hp\\OneDrive\\Desktop\\Data Structures\\MiniProject\\img\\hangman.png")); // NOI18N
+                                "img\\hangman.png")); // NOI18N
 
                 jLabel3.setIcon(new javax.swing.ImageIcon(
-                                "C:\\Users\\Hp\\OneDrive\\Desktop\\Data Structures\\MiniProject\\img\\/Tic tac toe.png")); // NOI18N
+                                "img\\Tic tac toe.png")); // NOI18N
 
                 jLabel4.setIcon(new javax.swing.ImageIcon(
-                                "C:\\Users\\Hp\\OneDrive\\Desktop\\Data Structures\\MiniProject\\img\\Roulette.png")); // NOI18N
+                                "img\\Roulette.png")); // NOI18N
 
                 jLabel5.setIcon(new javax.swing.ImageIcon(
-                                "C:\\Users\\Hp\\OneDrive\\Desktop\\Data Structures\\MiniProject\\img\\Pong.png")); // NOI18N
+                                "img\\Pong.png")); // NOI18N
 
                 Pong.setText("Pong");
 
@@ -147,7 +147,7 @@ public class gameFrame extends javax.swing.JFrame {
                         }
                 });
 
-                Hangman.setText("HangMan");
+                Hangman.setText("Guess It");
                 Hangman.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 HangmanActionPerformed(evt);
@@ -155,7 +155,7 @@ public class gameFrame extends javax.swing.JFrame {
                 });
 
                 Game5.setIcon(new javax.swing.ImageIcon(
-                                "C:\\Users\\Hp\\OneDrive\\Desktop\\Data Structures\\MiniProject\\img\\hangman.png")); // NOI18N
+                                "img\\hangman.png")); // NOI18N
 
                 game5.setText("game5");
                 game5.addActionListener(new java.awt.event.ActionListener() {
@@ -309,8 +309,6 @@ public class gameFrame extends javax.swing.JFrame {
         private void PongActionPerformed(java.awt.event.ActionEvent evt) {
                 heroFrame.setVisible(false);
                 pong = new PongGame();
-                // heroFrame.setAutoRequestFocus(true);
-                // System.out.println("Hello");
                 PongGame.getFrame().setAlwaysOnTop(true);
                 heroFrame.setVisible(true);
         }
