@@ -137,9 +137,18 @@ public class gameFrame extends javax.swing.JFrame {
                                 "img\\Pong.png")); // NOI18N
 
                 Pong.setText("Pong");
-
+                Pong.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                PongActionPerformed(evt);
+                        }
+                 });
                 Roulette.setText("Roulette");
-
+                
+                Roulette.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                RouletteActionPerformed(evt);
+                        }
+                });
                 TTT.setText("Tic Tac Toe");
                 TTT.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
