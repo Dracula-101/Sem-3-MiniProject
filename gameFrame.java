@@ -1,9 +1,10 @@
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowAdapter;
 import Pong.PongGame;
 import Roulette.Roulette;
 import TTT.TicTacToe;
-
-import java.io.IOException;
-
 import Hangman.Hangman;
 /*  
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -69,8 +70,7 @@ public class gameFrame extends javax.swing.JFrame {
                 title.setFont(new java.awt.Font("Arial Rounded MT Bold", 1, 55)); // NOI18N
                 title.setText("Game Library");
 
-                jLabel8.setIcon(new javax.swing.ImageIcon(
-                                "img\\Title Logo.png")); // NOI18N
+                jLabel8.setIcon(new javax.swing.ImageIcon("img\\Title Logo.png")); // NOI18N
 
                 javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
                 jPanel2.setLayout(jPanel2Layout);
@@ -128,7 +128,7 @@ public class gameFrame extends javax.swing.JFrame {
                                 "img\\hangman.png")); // NOI18N
 
                 jLabel3.setIcon(new javax.swing.ImageIcon(
-                                "img\\Tic tac toe.png")); // NOI18N
+                                "img\\/Tic tac toe.png")); // NOI18N
 
                 jLabel4.setIcon(new javax.swing.ImageIcon(
                                 "img\\Roulette.png")); // NOI18N
@@ -137,19 +137,20 @@ public class gameFrame extends javax.swing.JFrame {
                                 "img\\Pong.png")); // NOI18N
 
                 Pong.setText("Pong");
+
+                Roulette.setText("Roulette");
+
+                TTT.setText("Tic Tac Toe");
                 Pong.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 PongActionPerformed(evt);
                         }
-                 });
-                Roulette.setText("Roulette");
-                
+                });
                 Roulette.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 RouletteActionPerformed(evt);
                         }
                 });
-                TTT.setText("Tic Tac Toe");
                 TTT.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
                                 TTTActionPerformed(evt);
@@ -384,6 +385,21 @@ public class gameFrame extends javax.swing.JFrame {
                                 heroFrame = new gameFrame();
                                 heroFrame.setVisible(true);
                                 heroFrame.setLocationRelativeTo(null);
+                                heroFrame.addWindowListener(new WindowAdapter() {
+                                        public void windowClosing(WindowEvent evt) {
+                                                int resp = JOptionPane.showConfirmDialog(null,
+                                                                "Are you sure you want to exit?",
+                                                                "Exit?", JOptionPane.YES_NO_OPTION);
+
+                                                if (resp == JOptionPane.YES_OPTION) {
+                                                        heroFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                                                        heroFrame.dispose();
+                                                } else {
+                                                        heroFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+                                                        return;
+                                                }
+                                        }
+                                });
                         }
                 });
         }
