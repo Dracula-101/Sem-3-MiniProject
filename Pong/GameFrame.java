@@ -3,6 +3,8 @@ package Pong;
 import java.awt.*;
 import java.util.Random;
 import javax.swing.JFrame;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowAdapter;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import java.awt.event.*;
@@ -33,23 +35,26 @@ public class GameFrame extends JFrame {
         else
             playerPos = "Right ";
         PongGame.getFrame().setAlwaysOnTop(false);
-        PongGame.getFrame().setFocusable(true);
+        PongGame.getFrame().toFront();
         JFrame dialogBox = new JFrame();
-        // JOptionPane.showConfirmDialog(null,
-        // GameFrame.playerPos + "player " + " has Won the Game\nDo you want to play
-        // again?", "Exit the game ?",
-        // JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        // if (choice == JOptionPane.NO_OPTION) {
-        // JOptionPane.getRootFrame().dispose();
-        // PongGame.endPong();
-        // }
+        dialogBox.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        int resp = JOptionPane.showConfirmDialog(dialogBox,
+                GameFrame.playerPos + "player has won the Game. Do you want to play again?",
+                "Exit?", JOptionPane.YES_NO_OPTION);
 
-        // else if (choice == JOptionPane.YES_OPTION) {
+        if (resp == JOptionPane.NO_OPTION) {
+            PongGame.getFrame().setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            PongGame.endPong();
+            GamePanel.endGame = true;
+        } else {
+            PongGame.getFrame().setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            GamePanel.gameFlag = true;
+            return;
+        }
+        // JOptionPane.showMessageDialog(dialogBox, GameFrame.playerPos + "player has
+        // won the Game");
+        // dialogBox.dispose();
         // GamePanel.gameFlag = true;
-        // }
-        JOptionPane.showMessageDialog(dialogBox, GameFrame.playerPos + "player has won the Game");
-        dialogBox.dispose();
-        GamePanel.gameFlag = true;
     }
 
 }
@@ -64,6 +69,7 @@ class GamePanel extends JPanel implements Runnable {
     static final int PADDLE_HEIGHT = 100;
     static int Borders = 25;
     static boolean gameFlag = false;
+    static boolean endGame = false;
     Thread gameThread;
     Image image;
     Graphics graphics;
@@ -192,27 +198,26 @@ class GamePanel extends JPanel implements Runnable {
             delta += (now - lastTime) / ns;
             lastTime = now;
             if (gameFlag) {
-                // try {
-                // Thread.sleep(2000);
-                // } catch (InterruptedException e) {
-                // e.printStackTrace();
-                // }
-                // // System.out.println("Hello WTF");
-                // centerBall();
-                // repaint();
-                // score.ScoreReset();
-                // repaint();
-                // gameFlag = false;
-                PongGame.endPong();
-                return;
-            }
-            if (delta >= 1) {
+                System.out.println("Replaying");
+                centerBall();
+                repaint();
+                score.ScoreReset();
+                repaint();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                gameFlag = false;
+            } else if (delta >= 1) {
                 move();
                 checkCollision();
                 repaint();
                 score.checkScore();
                 delta--;
             }
+            if (endGame)
+                return;
         }
     }
 
