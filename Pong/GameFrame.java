@@ -37,7 +37,7 @@ public class GameFrame extends JFrame {
         JFrame dialogBox = new JFrame();
         dialogBox.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         int resp = JOptionPane.showConfirmDialog(dialogBox,
-                GameFrame.playerPos + "player has won the Game. Do you want to play again?",
+                GameFrame.playerPos + "player has won the Game.\nDo you want to play again?",
                 "Exit?", JOptionPane.YES_NO_OPTION);
 
         if (resp == JOptionPane.NO_OPTION) {
@@ -206,6 +206,7 @@ class GamePanel extends JPanel implements Runnable {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+                score.ScoreReset();
                 gameFlag = false;
             } else if (delta >= 1) {
                 move();

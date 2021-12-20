@@ -382,6 +382,7 @@ public class gameFrame extends javax.swing.JFrame {
                                                 if (resp == JOptionPane.YES_OPTION) {
                                                         heroFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
                                                         heroFrame.dispose();
+                                                        System.exit(0);
                                                 } else {
                                                         heroFrame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
                                                         return;
