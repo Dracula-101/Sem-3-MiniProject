@@ -140,7 +140,7 @@ class Wheel extends Roulette {
 			} else {
 				try {
 					System.out.print("\r" + spaces[i % 6]);
-					Thread.sleep((int) (100 + 50 * i));
+					Thread.sleep((int) (100 + 25 * i));
 				} catch (Exception e) {
 					System.out.println("Error Occured!!");
 				}
