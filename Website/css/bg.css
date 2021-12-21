@@ -1,0 +1,19 @@
+body{
+    overflow: hidden;
+    
+  }
+  canvas {
+    position: relative;
+  }
+  .arcade{
+      margin-top: 10px;
+
+    width: 100%;
+
+    top: 5;
+    left: 0;
+    padding-left: 10px;
+    position: relative;
+    color : #aaa;
+    font-size: 12px
+  }

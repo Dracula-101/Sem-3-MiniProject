@@ -1,0 +1,29 @@
+canvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height:auto ;
+	padding: auto;
+	overflow: hidden;
+	
+}
+
+
+.flex-container {
+	display: flex;
+	/* background-color: rgb(123, 18, 145); */
+}
+
+.flex-container > div {
+	background-color: #591ca8;
+	margin: 10px;
+	/* padding: 20px; */
+	font-size: 30px;
+}
+
+.imagestyle{
+	width: 1400px;
+	height: 250px;
+	border-radius: 15px;
+
+}
