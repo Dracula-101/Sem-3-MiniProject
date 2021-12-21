@@ -201,11 +201,6 @@ class GamePanel extends JPanel implements Runnable {
                 repaint();
                 score.ScoreReset();
                 repaint();
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
                 score.ScoreReset();
                 gameFlag = false;
             } else if (delta >= 1) {

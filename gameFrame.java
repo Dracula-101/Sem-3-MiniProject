@@ -1,11 +1,13 @@
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowAdapter;
 import Pong.PongGame;
 import Roulette.Roulette;
 import TTT.TicTacToe;
 import Hangman.Hangman;
+import FacultyGuess.FacultyGuess;
 
 /**
  *
@@ -18,6 +20,7 @@ public class gameFrame extends javax.swing.JFrame {
         Roulette roulette;
         TicTacToe tictactoe;
         Hangman hangman;
+        FacultyGuess fg;
 
         /**
          * Creates new form gameFrame
@@ -42,7 +45,7 @@ public class gameFrame extends javax.swing.JFrame {
                 TTT = new javax.swing.JButton();
                 Hangman = new javax.swing.JButton();
                 Game5 = new javax.swing.JLabel();
-                game5 = new javax.swing.JButton();
+                FacultyGuess = new javax.swing.JButton();
 
                 setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
                 setForeground(java.awt.Color.lightGray);
@@ -116,7 +119,7 @@ public class gameFrame extends javax.swing.JFrame {
                                 "img\\hangman.png")); // NOI18N
 
                 jLabel3.setIcon(new javax.swing.ImageIcon(
-                                "img\\/Tic tac toe.png")); // NOI18N
+                                "img\\Tic tac toe.png")); // NOI18N
 
                 jLabel4.setIcon(new javax.swing.ImageIcon(
                                 "img\\Roulette.png")); // NOI18N
@@ -153,12 +156,12 @@ public class gameFrame extends javax.swing.JFrame {
                 });
 
                 Game5.setIcon(new javax.swing.ImageIcon(
-                                "img\\hangman.png")); // NOI18N
+                                "img\\FacultyGuess.png")); // NOI18N
 
-                game5.setText("game5");
-                game5.addActionListener(new java.awt.event.ActionListener() {
+                FacultyGuess.setText("FQuest");
+                FacultyGuess.addActionListener(new java.awt.event.ActionListener() {
                         public void actionPerformed(java.awt.event.ActionEvent evt) {
-                                game5ActionPerformed(evt);
+                                FacultyGuessActionPerformed(evt);
                         }
                 });
 
@@ -195,7 +198,7 @@ public class gameFrame extends javax.swing.JFrame {
                                                                                 .addGroup(jPanel1Layout
                                                                                                 .createSequentialGroup()
                                                                                                 .addGap(132, 132, 132)
-                                                                                                .addComponent(game5)))
+                                                                                                .addComponent(FacultyGuess)))
                                                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                                 Short.MAX_VALUE))
                                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout
@@ -281,7 +284,7 @@ public class gameFrame extends javax.swing.JFrame {
                                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                                                                 .addPreferredGap(
                                                                                                                                 javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                                                                .addComponent(game5,
+                                                                                                                .addComponent(FacultyGuess,
                                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                                                                                 25,
                                                                                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -331,13 +334,13 @@ public class gameFrame extends javax.swing.JFrame {
                 hangman = new Hangman();
                 hangman.runHangman();
                 heroFrame.setVisible(true);
-        }// GEN-LAST:event_HangmanActionPerformed
+        }
 
-        private void game5ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_game5ActionPerformed
+        private void FacultyGuessActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_game5ActionPerformed
                 heroFrame.setVisible(false);
-
+                fg = new FacultyGuess();
                 heroFrame.setVisible(true);
-        }// GEN-LAST:event_game5ActionPerformed
+        }
 
         /**
          * @param args the command line arguments
@@ -399,7 +402,7 @@ public class gameFrame extends javax.swing.JFrame {
         private javax.swing.JButton Pong;
         private javax.swing.JButton Roulette;
         private javax.swing.JButton TTT;
-        private javax.swing.JButton game5;
+        private javax.swing.JButton FacultyGuess;
         private javax.swing.JLabel jLabel1;
         private javax.swing.JLabel jLabel2;
         private javax.swing.JLabel jLabel3;
